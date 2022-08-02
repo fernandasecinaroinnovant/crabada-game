@@ -1,0 +1,35 @@
+.sidebar {
+  background-color: #000000;
+  left: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+
+  .sidebar-content {
+    display: grid;
+    grid-template-rows: 86px 86px 86px 86px 86px 86px 86px;
+    padding: 0 1.515rem;
+
+    .icon-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-family: Filson Soft;
+
+      .logo {
+        margin-bottom: 0.25rem;
+      }
+    }
+
+    .community-buttons {
+      padding-top: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      row-gap: 1rem;
+    }
+  }
+}

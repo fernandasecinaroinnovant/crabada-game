@@ -1,0 +1,30 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: blue; /* #000916 */
+}
+
+@font-face {
+  font-family: "Cubano";
+  src: local("Cubano"), url("./assets/fonts/Cubano.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Nexa";
+  src: local("Nexa"), url("./assets/fonts/Nexa.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Filson Soft";
+  src: local("Filson Soft"),
+    url("./assets/fonts/FilsonSoft.otf") format("opentype");
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
