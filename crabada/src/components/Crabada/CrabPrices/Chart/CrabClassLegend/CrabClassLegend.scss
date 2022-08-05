@@ -1,6 +1,5 @@
 .crab-class-legend {
   width: 100%;
-  background-color: #40380f;
   padding: 0.125rem 1rem;
   padding-right: 0;
   display: flex;
@@ -8,6 +7,7 @@
   column-gap: 0.25rem;
   font-family: Filson Soft;
   box-sizing: border-box;
+  border-radius: 0.125rem;
 
   .value {
     margin-top: -0.25rem;
@@ -18,5 +18,9 @@
   .percentage {
     color: #34a527;
     font-size: 0.75rem;
+  }
+
+  .red {
+    color: #fc252b;
   }
 }

@@ -2,6 +2,41 @@ import InfoIcon from "../../../../assets/SVG/InfoIcon";
 import CrabClassLegend from "./CrabClassLegend/CrabClassLegend";
 import "./Chart.scss";
 
+const crabClasses: { crabName: string; color: string }[] = [
+  {
+    crabName: "prime",
+    color: "#40380F",
+  },
+  {
+    crabName: "bulk",
+    color: "#401913",
+  },
+  {
+    crabName: "craboid",
+    color: "#001C40",
+  },
+  {
+    crabName: "ruined",
+    color: "#1D1640",
+  },
+  {
+    crabName: "gem",
+    color: "#400C2B",
+  },
+  {
+    crabName: "organic",
+    color: "#14400F",
+  },
+  {
+    crabName: "surge",
+    color: "#40090B",
+  },
+  {
+    crabName: "sunken",
+    color: "#074040",
+  },
+];
+
 const Chart: React.FC<{}> = () => {
   return (
     <div className="crabada-chart">
@@ -25,14 +60,14 @@ const Chart: React.FC<{}> = () => {
           <div className="chart"></div>
         </div>
         <div className="chart-legends">
-          <CrabClassLegend />
-          <CrabClassLegend />
-          <CrabClassLegend />
-          <CrabClassLegend />
-          <CrabClassLegend />
-          <CrabClassLegend />
-          <CrabClassLegend />
-          <CrabClassLegend />
+          {crabClasses.map(({ crabName, color }) => (
+            <CrabClassLegend
+              crabName={crabName}
+              color={color}
+              key={crabName}
+              percentage={29}
+            />
+          ))}
         </div>
       </div>
     </div>
