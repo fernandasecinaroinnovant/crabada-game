@@ -1,0 +1,22 @@
+.crab-class-legend {
+  width: 100%;
+  background-color: #40380f;
+  padding: 0.125rem 1rem;
+  padding-right: 0;
+  display: flex;
+  align-items: center;
+  column-gap: 0.25rem;
+  font-family: Filson Soft;
+  box-sizing: border-box;
+
+  .value {
+    margin-top: -0.25rem;
+    font-size: 1.125rem;
+    color: #ffff;
+  }
+
+  .percentage {
+    color: #34a527;
+    font-size: 0.75rem;
+  }
+}

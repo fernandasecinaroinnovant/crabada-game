@@ -1,0 +1,80 @@
+.crabada-chart {
+  display: flex;
+  width: 81rem;
+  height: 28.25rem;
+  background: linear-gradient(180deg, #001431 0%, #000d1f 100%);
+  border: 0.0625rem solid #1370f6;
+  border-radius: 0.25rem;
+
+  .crabada-chart-content {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    column-gap: 3rem;
+    box-sizing: border-box;
+    padding: 1.5rem 3.1875rem 2.1875rem 2.8125rem;
+
+    .crabada-header-chart-container {
+      display: flex;
+      flex-direction: column;
+      row-gap: 1.5rem;
+
+      .chart-header {
+        display: flex;
+        justify-content: space-between;
+        padding-left: 1.1875rem;
+
+        .chart-title {
+          display: flex;
+          flex-direction: column;
+          row-gap: 0.5rem;
+          font-family: Filson Soft;
+          color: white;
+
+          .gray-content {
+            color: #a4a4a4;
+          }
+
+          .todays-low {
+            padding-right: 0.3956rem;
+          }
+
+          .chart-title-second-row {
+            font-size: 1.75rem;
+          }
+        }
+
+        .all-crabs-buttons {
+          display: flex;
+          align-items: flex-end;
+
+          .all-crabs-button {
+            line-height: 0.875rem;
+            border: 0;
+            font-family: Filson Soft;
+            font-size: 0.875rem;
+            font-weight: 300;
+            padding: 0.625rem 4.2031rem;
+            background-color: #1370f6;
+            border-radius: 0.25rem;
+            color: #ffff;
+            cursor: pointer;
+          }
+        }
+      }
+
+      .chart {
+        width: 56rem;
+        height: 18.9375rem;
+      }
+    }
+
+    .chart-legends {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+      row-gap: 0.5rem;
+    }
+  }
+}

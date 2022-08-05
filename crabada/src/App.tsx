@@ -1,7 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./pages/Layout/Layout";
 import Crabada from "./pages/Crabada/Crabada";
-import NotFound from "./pages/NotFound";
 import "./App.css";
 
 function App() {
@@ -10,7 +9,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Crabada />} />
-          <Route path="*" element={<NotFound />} />
+          <Route path="*" element={<Crabada />} />
         </Route>
       </Routes>
     </BrowserRouter>
