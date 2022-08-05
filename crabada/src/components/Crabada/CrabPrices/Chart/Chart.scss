@@ -27,9 +27,14 @@
         .chart-title {
           display: flex;
           flex-direction: column;
-          row-gap: 0.5rem;
+          row-gap: 0.2rem;
           font-family: Filson Soft;
           color: white;
+
+          .chart-title-first-row {
+            padding-left: 0.25rem;
+            font-size: 0.875rem;
+          }
 
           .gray-content {
             color: #a4a4a4;
@@ -66,6 +71,18 @@
       .chart {
         width: 56rem;
         height: 18.9375rem;
+        position: relative;
+        font-family: Filson Soft;
+        font-size: 0.5625rem;
+        color: #ffff;
+
+        .company-black-icon {
+          position: absolute;
+          margin: auto;
+          inset: 0;
+          bottom: 2.1875rem;
+          text-align: center;
+        }
       }
     }
 
