@@ -1,0 +1,53 @@
+.crabada-header {
+  display: flex;
+  flex-direction: column;
+
+  .separator {
+    height: 0.0625rem;
+    width: 61.875rem;
+    background-color: #1e1e1e;
+    margin-top: 1.375rem;
+  }
+
+  .crabada-header-title {
+    display: flex;
+    padding: 1rem;
+    column-gap: 0.625rem;
+
+    .header-name {
+      font-family: Cubano;
+      color: #ffffff;
+      font-size: 2.5rem;
+    }
+
+    .header-current-values {
+      display: flex;
+      column-gap: 2rem;
+    }
+  }
+
+  .crabada-navbar {
+    width: 81.25rem;
+    height: 2.5rem;
+    background-color: #011431;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    font-family: Cubano;
+    color: #ffffff;
+    border-radius: 0.125rem;
+    font-size: 1.25rem;
+
+    .navbar-option {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 0.1875rem;
+      cursor: pointer;
+      border-radius: 0.125rem;
+    }
+
+    .active {
+      background-color: #0048b0;
+    }
+  }
+}
