@@ -1,0 +1,46 @@
+.crab-prices-filters {
+  display: flex;
+  background-color: #001a41;
+  border-radius: 0.25rem;
+  border: 0.0625rem solid #6ea9ff;
+  width: 81.25rem;
+
+  .crab-prices-filters-content {
+    display: flex;
+    column-gap: 5.5625rem;
+    padding: 1rem 0 1rem 3.5rem;
+
+    .crab-prices-sliders {
+      color: #ffff;
+      font-family: Filson Soft;
+      font-size: 1rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 5rem;
+
+      .filter-option {
+        display: flex;
+        flex-direction: column;
+        row-gap: 0.5rem;
+      }
+    }
+
+    .filters-buttons {
+      display: flex;
+      align-items: center;
+
+      .apply-filter-button {
+        background-color: #1370f6;
+        color: #ffff;
+        border-width: 0;
+        width: 10.3125rem;
+        height: 2rem;
+        padding-bottom: 0.1875rem;
+        border-radius: 1.25rem;
+        font-family: Filson Soft;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+    }
+  }
+}

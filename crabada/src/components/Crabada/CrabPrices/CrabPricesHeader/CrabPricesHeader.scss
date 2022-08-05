@@ -1,0 +1,36 @@
+.crab-prices {
+  display: flex;
+  width: 81.25rem;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 0.75rem;
+  padding-bottom: 2rem;
+
+  .crab-prices-title {
+    padding-left: 0.625rem;
+    font-family: Filson Soft;
+    font-size: 1.5rem;
+  }
+
+  .crab-prices-insight {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 5.1875rem;
+    padding-right: 1.125rem;
+
+    .profile {
+      display: flex;
+      align-items: center;
+      column-gap: 0.5rem;
+
+      .user-insight {
+        font-family: Nexa;
+        font-size: 1rem;
+        font-weight: 900;
+        line-height: 1.2rem;
+      }
+    }
+  }
+}
