@@ -1,3 +1,4 @@
+import AmuletPrice from "./AmuletPrice/AmuletPrice";
 import "./CrabadaHeader.scss";
 
 const navbarOptions: string[] = [
@@ -5,6 +6,33 @@ const navbarOptions: string[] = [
   "Economy",
   "Population",
   "Crab Prices",
+];
+
+const amulets: {
+  amuletName: string;
+  amuletPrice: number;
+  difference: number;
+}[] = [
+  {
+    amuletName: "AVAX",
+    amuletPrice: 86.65,
+    difference: -1.45,
+  },
+  {
+    amuletName: "CRA",
+    amuletPrice: 1.21,
+    difference: 1.21,
+  },
+  {
+    amuletName: "TUS",
+    amuletPrice: 0.11,
+    difference: -1.45,
+  },
+  {
+    amuletName: "CRAM",
+    amuletPrice: 0.11,
+    difference: -1.45,
+  },
 ];
 
 const CrabadaHeader: React.FC<{
@@ -18,7 +46,14 @@ const CrabadaHeader: React.FC<{
       <div className="crabada-header-title">
         <span className="header-name">Crabada</span>
         <div className="header-current-values">
-          <div></div>
+          {amulets.map(({ amuletName, amuletPrice, difference }) => (
+            <AmuletPrice
+              key={amuletName}
+              amuletName={amuletName}
+              amuletPrice={amuletPrice}
+              difference={difference}
+            />
+          ))}
         </div>
       </div>
       <div className="crabada-navbar">

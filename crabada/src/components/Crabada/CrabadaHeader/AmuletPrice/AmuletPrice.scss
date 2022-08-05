@@ -1,0 +1,26 @@
+.amulet-price-container {
+  display: flex;
+  column-gap: 0.625rem;
+  font-family: Filson Soft;
+  font-size: 1rem;
+  font-weight: 200;
+  color: #ffff;
+
+  .amulet-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .difference {
+    font-size: 0.875rem;
+    padding: 0.125rem;
+    border-radius: 0.125rem;
+    color: #34a527;
+    background-color: #052d00;
+  }
+
+  .red {
+    color: #fc252b;
+    background-color: #3a0002;
+  }
+}
