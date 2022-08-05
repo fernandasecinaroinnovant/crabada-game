@@ -9,7 +9,7 @@ import TwitterLogo from "../../../assets/SVG/TwitterLogo";
 import DiscordLogo from "../../../assets/SVG/DiscordLogo";
 import TwitchLogo from "../../../assets/SVG/TwitchLogo";
 import AboutIcon from "../../../assets/SVG/AboutIcon";
-import "./Sidebar.scss";
+import "./sidebar.scss";
 
 const sidebarOptions: (
   | {

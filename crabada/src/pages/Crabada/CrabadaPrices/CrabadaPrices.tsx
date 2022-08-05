@@ -2,7 +2,7 @@ import { useState } from "react";
 import Chart from "../../../components/Crabada/CrabPrices/Chart/Chart";
 import CrabPricesFilters from "../../../components/Crabada/CrabPrices/CrabPricesFilters/CrabPricesFilters";
 import CrabPricesHeader from "../../../components/Crabada/CrabPrices/CrabPricesHeader/CrabPricesHeader";
-import "./CrabadaPrices.scss";
+import "./crabada-prices.scss";
 
 const CrabadaPrices: React.FC<{}> = () => {
   const [filters, setFilters] = useState<{

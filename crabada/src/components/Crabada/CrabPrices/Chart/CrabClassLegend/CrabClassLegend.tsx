@@ -1,5 +1,5 @@
 import getImageByKey from "./ClassIcon";
-import "./CrabClassLegend.scss";
+import "./crab-class-legend.scss";
 
 const CrabClassLegend: React.FC<{
   crabName: string;

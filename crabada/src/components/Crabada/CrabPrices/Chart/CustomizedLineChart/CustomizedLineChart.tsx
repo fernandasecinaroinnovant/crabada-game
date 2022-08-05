@@ -1,3 +1,4 @@
+import React from "react";
 import {
   CartesianAxis,
   CartesianGrid,
@@ -100,7 +101,7 @@ const CustomizedLineChart: React.FC<{
         strokeDasharray="12"
       />
       {crabClasses.map(({ crabName, chartColor }) => (
-        <>
+        <React.Fragment key={crabName}>
           {YAxisData.map(({ id }) => (
             <Line
               key={crabName}
@@ -112,7 +113,7 @@ const CustomizedLineChart: React.FC<{
               strokeWidth={3}
             />
           ))}{" "}
-        </>
+        </React.Fragment>
       ))}
     </LineChart>
   );

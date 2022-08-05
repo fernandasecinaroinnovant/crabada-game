@@ -1,4 +1,4 @@
-import "./AmuletPrice.scss";
+import "./amulet-price.scss";
 import getImageByKey from "./AmuletIcon";
 
 const AmuletPrice: React.FC<{

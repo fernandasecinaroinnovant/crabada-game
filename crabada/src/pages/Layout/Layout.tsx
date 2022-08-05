@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Sidebar from "../../components/Common/Sidebar/Sidebar";
 import Footer from "../../components/Common/Footer/Footer";
-import "./Layout.scss";
+import "./layout.scss";
 
 const Layout: React.FC<{}> = () => {
   return (

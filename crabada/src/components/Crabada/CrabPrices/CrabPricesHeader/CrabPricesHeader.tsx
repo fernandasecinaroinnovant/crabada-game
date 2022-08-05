@@ -1,6 +1,6 @@
 import HideIcon from "../../../../assets/SVG/HideIcon";
 import NFTIcon from "../../../../assets/SVG/nft.svg";
-import "./CrabPricesHeader.scss";
+import "./crab-prices-header.scss";
 
 const CrabPricesHeader: React.FC<{}> = () => {
   return (

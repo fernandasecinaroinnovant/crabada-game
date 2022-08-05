@@ -2,7 +2,7 @@ import CrabClassLegend from "./CrabClassLegend/CrabClassLegend";
 import InfoIcon from "../../../../assets/SVG/InfoIcon";
 import P2eBlackIcon from "../../../../assets/SVG/P2E-icon-black.svg";
 import CustomizedLineChart from "./CustomizedLineChart/CustomizedLineChart";
-import "./Chart.scss";
+import "./chart.scss";
 
 const crabClasses: {
   crabName: string;

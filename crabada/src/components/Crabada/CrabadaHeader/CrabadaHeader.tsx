@@ -1,5 +1,5 @@
 import AmuletPrice from "./AmuletPrice/AmuletPrice";
-import "./CrabadaHeader.scss";
+import "./crabada-header.scss";
 
 const navbarOptions: string[] = [
   "Profile",

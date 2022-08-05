@@ -1,7 +1,7 @@
 import { useState } from "react";
 import CrabadaHeader from "../../components/Crabada/CrabadaHeader/CrabadaHeader";
 import CrabadaPrices from "./CrabadaPrices/CrabadaPrices";
-import "./Crabada.scss";
+import "./crabada.scss";
 
 const CRABADA_PRICES_TAB = 3;
 

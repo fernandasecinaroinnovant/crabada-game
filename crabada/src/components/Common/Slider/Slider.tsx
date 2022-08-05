@@ -1,13 +1,12 @@
-import "./Slider.scss";
-
-const ranges: number = 7;
+import "./slider.scss";
 
 const Slider: React.FC<{
   value: number;
   onChangeFiltersHandler: Function;
   name: string;
+  maxRange: number;
 }> = (props) => {
-  const { value, name, onChangeFiltersHandler } = props;
+  const { value, name, onChangeFiltersHandler, maxRange } = props;
 
   const onChangeRangeHandler = ({
     target: { value },
@@ -18,16 +17,22 @@ const Slider: React.FC<{
   return (
     <div className="slider-container">
       <div className="slider-ranges">
-        {[...Array(ranges)].map((_, index) => (
+        {[...Array(maxRange + 1)].map((_, index) => (
           <span className="range" key={index}></span>
         ))}
       </div>
       <input
         type="range"
-        value={value}
         min="0"
-        max={ranges - 1}
-        className="slider"
+        max={maxRange}
+        step="1"
+        onChange={onChangeRangeHandler}
+      />
+      <input
+        type="range"
+        min="0"
+        max={maxRange}
+        step="1"
         onChange={onChangeRangeHandler}
       />
     </div>
