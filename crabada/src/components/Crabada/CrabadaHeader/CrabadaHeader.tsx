@@ -1,12 +1,7 @@
 import AmuletPrice from "./AmuletPrice/AmuletPrice";
+import Banner from "../../../assets/SVG/crabada-banner.svg";
 import "./crabada-header.scss";
-
-const navbarOptions: string[] = [
-  "Profile",
-  "Economy",
-  "Population",
-  "Crab Prices",
-];
+import Navbar from "./Navbar/Navbar";
 
 const amulets: {
   amuletName: string;
@@ -56,17 +51,11 @@ const CrabadaHeader: React.FC<{
           ))}
         </div>
       </div>
-      <div className="crabada-navbar">
-        {navbarOptions.map((navbarOption, index) => (
-          <div
-            className={`navbar-option ${tabSelected === index && "active"}`}
-            onClick={() => onTabChangeHandler(index)}
-            key={navbarOption}
-          >
-            {navbarOption}
-          </div>
-        ))}
-      </div>
+      <img src={Banner} alt="Banner" className="banner" />
+      <Navbar
+        tabSelected={tabSelected}
+        onTabChangeHandler={onTabChangeHandler}
+      />
       <span className="separator"></span>
     </div>
   );

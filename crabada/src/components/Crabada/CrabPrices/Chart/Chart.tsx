@@ -59,7 +59,7 @@ const Chart: React.FC<{}> = () => {
           <div className="chart-header">
             <div className="chart-title">
               <div className="chart-title-first-row">
-                Crabda Count
+                Crabada Count
                 <span className="gray-content todays-low"> (Todays low)</span>
                 <InfoIcon />
               </div>
@@ -81,6 +81,7 @@ const Chart: React.FC<{}> = () => {
           </div>
         </div>
         <div className="chart-legends">
+          <span className="chart-legends-title">POPULATION BREAKDOWN</span>
           {crabClasses.map(({ crabName, legendColor }) => (
             <CrabClassLegend
               crabName={crabName}
