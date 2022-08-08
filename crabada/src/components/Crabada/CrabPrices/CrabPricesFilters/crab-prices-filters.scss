@@ -7,8 +7,10 @@
 
   .crab-prices-filters-content {
     display: flex;
+    justify-content: space-between;
+    width: 100%;
     column-gap: 5.5625rem;
-    padding: 1rem 0 1.3rem 3.5rem;
+    padding: 1rem 4.375rem 1.3rem 3.5rem;
 
     .crab-prices-sliders {
       color: #ffff;
@@ -16,6 +18,7 @@
       font-size: 1rem;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
+      width: 100%;
       column-gap: 5rem;
 
       .filter-option {
