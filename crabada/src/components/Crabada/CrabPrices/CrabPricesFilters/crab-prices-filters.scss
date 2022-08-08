@@ -3,12 +3,12 @@
   background-color: #001a41;
   border-radius: 0.25rem;
   border: 0.0625rem solid #6ea9ff;
-  width: 81.25rem;
+  width: 100%;
 
   .crab-prices-filters-content {
     display: flex;
     column-gap: 5.5625rem;
-    padding: 1rem 0 1rem 3.5rem;
+    padding: 1rem 0 1.3rem 3.5rem;
 
     .crab-prices-sliders {
       color: #ffff;
@@ -21,7 +21,6 @@
       .filter-option {
         display: flex;
         flex-direction: column;
-        row-gap: 0.5rem;
       }
     }
 
@@ -42,5 +41,11 @@
         cursor: pointer;
       }
     }
+  }
+}
+
+@media only screen and (max-width: 1020px) {
+  .crab-prices-filters {
+    display: none;
   }
 }

@@ -1,0 +1,24 @@
+.crabada-footer {
+  display: none;
+}
+@media only screen and (max-width: 1020px) {
+  .crabada-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 9.75rem;
+    border-top: 1px solid #26252a;
+
+    .feedback-button {
+      font-family: Filson Soft;
+      font-size: 1rem;
+      color: #ffff;
+      background: #1370f6;
+      border-radius: 1.25rem;
+      border-width: 0;
+      padding: 0.25rem 1rem;
+      cursor: pointer;
+      box-sizing: border-box;
+    }
+  }
+}

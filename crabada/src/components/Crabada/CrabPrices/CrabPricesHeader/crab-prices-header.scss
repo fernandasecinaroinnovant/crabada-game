@@ -1,6 +1,6 @@
 .crab-prices {
   display: flex;
-  width: 81.25rem;
+  width: 100%;
   color: #ffffff;
   display: flex;
   justify-content: space-between;
@@ -32,5 +32,11 @@
         line-height: 1.2rem;
       }
     }
+  }
+}
+
+@media only screen and (max-width: 1020px) {
+  .crab-prices {
+    display: none;
   }
 }

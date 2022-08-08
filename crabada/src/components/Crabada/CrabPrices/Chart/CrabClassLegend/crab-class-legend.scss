@@ -25,3 +25,18 @@
     color: #fc252b;
   }
 }
+
+@media only screen and (max-width: 1020px) {
+  .crab-class-legend {
+    border: 1px solid #002f75;
+    box-sizing: border-box;
+
+    .percentage {
+      color: #8a8a8a;
+    }
+
+    .red {
+      color: #8a8a8a;
+    }
+  }
+}

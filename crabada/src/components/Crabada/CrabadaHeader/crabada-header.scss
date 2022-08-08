@@ -9,6 +9,10 @@
     margin-top: 1.375rem;
   }
 
+  .banner {
+    display: none;
+  }
+
   .crabada-header-title {
     display: flex;
     padding: 1rem;
@@ -28,7 +32,7 @@
   }
 
   .crabada-navbar {
-    width: 81.25rem;
+    width: 100%;
     height: 2.5rem;
     background-color: #011431;
     display: grid;
@@ -45,10 +49,71 @@
       padding-bottom: 0.1875rem;
       cursor: pointer;
       border-radius: 0.125rem;
+
+      .navbar-arrow {
+        display: none;
+      }
     }
 
     .active {
       background-color: #0048b0;
+    }
+  }
+}
+
+@media only screen and (max-width: 1020px) {
+  .crabada-header {
+    position: fixed;
+    height: 155px;
+    width: 100%;
+
+    .banner {
+      display: block;
+      height: 7.8125rem;
+      position: absolute;
+      top: -1.6875rem;
+    }
+
+    .separator {
+      display: none;
+    }
+
+    .crabada-header-title {
+      display: none;
+    }
+    .header-current-values {
+      display: none !important;
+    }
+  }
+
+  .crabada-navbar {
+    position: absolute;
+    bottom: 2.5rem;
+    grid-template-columns: 25.1875rem !important;
+    background-color: #000916 !important;
+    background: transparent !important;
+
+    .navbar-option {
+      border: 0.0625rem solid #ffff;
+      height: 3.375rem;
+      position: absolute;
+      box-sizing: border-box;
+      left: 13px;
+      right: 12px;
+      justify-content: space-between !important;
+      background-color: #011431;
+      align-items: center;
+      padding: 0 1.3125rem 0 1.625rem;
+      font-size: 1.125rem;
+      font-family: Filson Soft;
+
+      .navbar-arrow {
+        display: block !important;
+      }
+    }
+
+    .active {
+      background-color: #011431 !important;
     }
   }
 }
