@@ -1,7 +1,9 @@
 import CrabClassLegend from "./CrabClassLegend/CrabClassLegend";
 import InfoIcon from "../../../../assets/SVG/InfoIcon";
 import P2eBlackIcon from "../../../../assets/SVG/P2E-icon-black.svg";
-import CustomizedLineChart from "./CustomizedLineChart/CustomizedLineChart";
+import CustomizedLineChart, {
+  ChartData,
+} from "./CustomizedLineChart/CustomizedLineChart";
 import "./chart.scss";
 
 const crabClasses: {
@@ -10,48 +12,50 @@ const crabClasses: {
   chartColor: string;
 }[] = [
   {
-    crabName: "prime",
+    crabName: "PRIME",
     legendColor: "#40380F",
     chartColor: "#C9B22E",
   },
   {
-    crabName: "bulk",
+    crabName: "BULK",
     legendColor: "#401913",
     chartColor: "#793024",
   },
   {
-    crabName: "craboid",
+    crabName: "CRABOID",
     legendColor: "#001C40",
     chartColor: "#0068EC",
   },
   {
-    crabName: "ruined",
+    crabName: "RUINED",
     legendColor: "#1D1640",
     chartColor: "#533FB4",
   },
   {
-    crabName: "gem",
+    crabName: "GEM",
     legendColor: "#400C2B",
     chartColor: "#EC2C9E",
   },
   {
-    crabName: "organic",
+    crabName: "ORGANIC",
     legendColor: "#14400F",
     chartColor: "#34A527",
   },
   {
-    crabName: "surge",
+    crabName: "SURGE",
     legendColor: "#40090B",
     chartColor: "#FC252B",
   },
   {
-    crabName: "sunken",
+    crabName: "SUNKEN",
     legendColor: "#074040",
     chartColor: "#108C8C",
   },
 ];
 
-const Chart: React.FC<{}> = () => {
+const Chart: React.FC<{ data: ChartData[] }> = (props) => {
+  const { data } = props;
+
   return (
     <div className="crabada-chart">
       <div className="crabada-chart-content">
@@ -77,7 +81,7 @@ const Chart: React.FC<{}> = () => {
               alt="P2E black icon"
               className="company-black-icon"
             />
-            <CustomizedLineChart crabClasses={crabClasses} />
+            <CustomizedLineChart crabClasses={crabClasses} data={data} />
           </div>
         </div>
         <div className="chart-legends">
