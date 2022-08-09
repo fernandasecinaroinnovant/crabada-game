@@ -7,7 +7,6 @@ import {
   LineChart,
   ReferenceLine,
   ResponsiveContainer,
-  Tooltip,
   XAxis,
   YAxis,
 } from "recharts";
@@ -48,7 +47,7 @@ interface Props {
 
 const CustomizedLineChart: React.FC<Props> = (props) => {
   const { crabClasses } = props;
-  const crabs = useSelector((state: RootState) => state.crabs);
+  const crabs = useSelector((state: RootState) => state.crabs.values);
   const data = useMemo(() => {
     return Object.keys(crabs)
       .sort((a, b) => Number(a) - Number(b))

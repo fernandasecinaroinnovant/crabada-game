@@ -3,12 +3,20 @@ import type { PayloadAction } from "@reduxjs/toolkit";
 import { GetPricesResponse } from "../../models/PricePost";
 
 interface CrabsState {
-  [date: number]: {
-    [crabClass: string]: number;
+  values: {
+    [date: number]: {
+      [crabClass: string]: number;
+    };
   };
+  lastFetchedDay: number;
+  secondLastFetchedDay: number;
 }
 
-const initialState: CrabsState = {};
+const initialState: CrabsState = {
+  values: {},
+  lastFetchedDay: 0,
+  secondLastFetchedDay: 0,
+};
 
 const crabsSlice = createSlice({
   name: "crabs",
@@ -21,13 +29,18 @@ const crabsSlice = createSlice({
       const { prices, crabClass } = action.payload;
 
       prices.forEach((price) => {
-        if (!state[price.bucketDate]) {
-          state[price.bucketDate] = {};
+        if (!state.values[price.bucketDate]) {
+          state.values[price.bucketDate] = {};
         }
-        state[price.bucketDate] = {
-          ...state[price.bucketDate],
+        state.values[price.bucketDate] = {
+          ...state.values[price.bucketDate],
           [crabClass]: price.avgPrice,
         };
+
+        if (price.bucketDate > state.lastFetchedDay) {
+          state.secondLastFetchedDay = state.lastFetchedDay;
+          state.lastFetchedDay = price.bucketDate;
+        }
       });
     },
   },

@@ -1,23 +1,12 @@
-import { useQueries, UseQueryResult } from "@tanstack/react-query";
+import { useQueries } from "@tanstack/react-query";
 import { useMemo } from "react";
 import { useDispatch } from "react-redux";
-import { ChartData } from "../components/Crabada/CrabPrices/Chart/CustomizedLineChart/CustomizedLineChart";
-import { GetPricesRequest, GetPricesResponse } from "../models/PricePost";
+import { GetPricesResponse } from "../models/PricePost";
 import { getPrices } from "../services/crabadaService";
 import { addCrabValues } from "../store/slices/crabsSlice";
+import { crabClasses } from "../models/constants";
 
-const crabClasses = [
-  "SURGE",
-  "SUNKEN",
-  "PRIME",
-  "BULK",
-  "CRABOID",
-  "RUINED",
-  "GEM",
-  "ORGANIC",
-];
-
-export const usePrices = (from: string) => {
+export const usePrices = () => {
   const dispatch = useDispatch();
 
   const dates = useMemo(() => {
@@ -34,9 +23,9 @@ export const usePrices = (from: string) => {
         const from = new Date(date).toISOString();
         return {
           queryKey: ["prices", crab, from],
-          queryFn: () => getPrices({ from, crabClass: [crab] }),
+          queryFn: () => getPrices({ from, crabClass: [crab.crabName] }),
           onSuccess: (prices: GetPricesResponse[]) => {
-            dispatch(addCrabValues({ prices, crabClass: crab }));
+            dispatch(addCrabValues({ prices, crabClass: crab.crabName }));
           },
         };
       });

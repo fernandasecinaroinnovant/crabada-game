@@ -5,56 +5,39 @@ import CustomizedLineChart, {
   ChartData,
 } from "./CustomizedLineChart/CustomizedLineChart";
 import "./chart.scss";
-
-const crabClasses: {
-  crabName: string;
-  legendColor: string;
-  chartColor: string;
-}[] = [
-  {
-    crabName: "PRIME",
-    legendColor: "#40380F",
-    chartColor: "#C9B22E",
-  },
-  {
-    crabName: "BULK",
-    legendColor: "#401913",
-    chartColor: "#793024",
-  },
-  {
-    crabName: "CRABOID",
-    legendColor: "#001C40",
-    chartColor: "#0068EC",
-  },
-  {
-    crabName: "RUINED",
-    legendColor: "#1D1640",
-    chartColor: "#533FB4",
-  },
-  {
-    crabName: "GEM",
-    legendColor: "#400C2B",
-    chartColor: "#EC2C9E",
-  },
-  {
-    crabName: "ORGANIC",
-    legendColor: "#14400F",
-    chartColor: "#34A527",
-  },
-  {
-    crabName: "SURGE",
-    legendColor: "#40090B",
-    chartColor: "#FC252B",
-  },
-  {
-    crabName: "SUNKEN",
-    legendColor: "#074040",
-    chartColor: "#108C8C",
-  },
-];
+import { useSelector } from "react-redux";
+import { crabClasses } from "../../../../models/constants";
+import { RootState } from "../../../../store/store";
+import { useMemo } from "react";
 
 const Chart: React.FC<{ data: ChartData[] }> = (props) => {
   const { data } = props;
+  const crabsValues = useSelector((state: RootState) => state.crabs.values);
+  const crabs = useSelector((state: RootState) =>
+    state.crabs.lastFetchedDay
+      ? state.crabs.values[state.crabs.lastFetchedDay]
+      : {}
+  );
+  const secondLastCrabs = useSelector((state: RootState) =>
+    state.crabs.secondLastFetchedDay
+      ? state.crabs.values[state.crabs.secondLastFetchedDay]
+      : {}
+  );
+
+  const { totalBuckets, minToday } = useMemo(() => {
+    const totalBuckets = Object.values(crabsValues).reduce<number>(
+      (result: number, curr: { [crabName: string]: number }) =>
+        result +
+        Object.values(curr).reduce(
+          (sum: number, value: number) => sum + value,
+          0
+        ),
+      0
+    );
+    const minToday = Math.min(...Object.values(crabs));
+
+    return { totalBuckets, minToday };
+  }, [crabs, crabsValues]);
 
   return (
     <div className="crabada-chart">
@@ -68,7 +51,8 @@ const Chart: React.FC<{ data: ChartData[] }> = (props) => {
                 <InfoIcon />
               </div>
               <div className="chart-title-second-row">
-                256,003 <span className="gray-content">($1,543)</span>
+                {Math.round(totalBuckets)}
+                <span className="gray-content">({Math.round(minToday)})</span>
               </div>
             </div>
             <div className="all-crabs-buttons">
@@ -88,10 +72,11 @@ const Chart: React.FC<{ data: ChartData[] }> = (props) => {
           <span className="chart-legends-title">POPULATION BREAKDOWN</span>
           {crabClasses.map(({ crabName, legendColor }) => (
             <CrabClassLegend
+              key={crabName}
+              value={crabs[crabName]}
               crabName={crabName}
               color={legendColor}
-              key={crabName}
-              percentage={29}
+              secondLastValue={secondLastCrabs[crabName]}
             />
           ))}
         </div>

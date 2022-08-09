@@ -4,16 +4,20 @@ import "./crab-class-legend.scss";
 const CrabClassLegend: React.FC<{
   crabName: string;
   color: string;
-  percentage: number;
+  value: number;
+  secondLastValue: number;
 }> = (props) => {
-  const { crabName, color, percentage } = props;
+  const { crabName, color, secondLastValue, value } = props;
+
+  const percentage = (value - secondLastValue) / secondLastValue;
+
   return (
     <div style={{ backgroundColor: color }} className="crab-class-legend">
       <img src={getImageByKey(crabName)}></img>
-      <span className="value">2742</span>
+      <span className="value">{Math.round(value ?? 0)}</span>
       <span className={`percentage ${percentage < 0 && "red"}`}>
         {percentage >= 0 && "+"}
-        {percentage}%
+        {!isNaN(percentage) ? percentage.toFixed(2) : 0}%
       </span>
     </div>
   );
